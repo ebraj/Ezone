@@ -1,0 +1,10 @@
+.e-home {
+  background-color: #34283c;
+}
+.e-flex-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}

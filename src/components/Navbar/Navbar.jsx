@@ -2,10 +2,10 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="bg-gray-900 py-5 px-6">
-      <nav className="lg:container mx-auto container text-gray-100 flex items-center justify-between">
+    <div className="bg-black py-5 px-6">
+      <nav className="lg:container mx-auto text-gray-100 flex items-center justify-between">
         <div>
-          <h1>EZONE</h1>
+          <h4>EZONE</h4>
         </div>
         <ul className="flex items-center">
           <li>
