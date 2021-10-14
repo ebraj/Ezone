@@ -1,0 +1,33 @@
+.e-home {
+  background-color: #34283c;
+}
+.e-flex-container {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  .e__home {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+    & > div {
+      &:first-child {
+        width: 45%;
+        @media screen and (max-width: 600px) {
+          order: 2;
+          width: 100%;
+        }
+      }
+      &:last-child {
+        width: 55%;
+        @media screen and (max-width: 600px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
