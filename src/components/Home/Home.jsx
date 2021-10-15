@@ -15,7 +15,7 @@ const Home = () => {
               <h1 className="font-serif font-bold text-gray-100 text-5xl md:text-7xl">
                 Ezone
               </h1>
-              <h2 className="text-gray-300 font-thin text-xl md:text-2xl py-2">
+              <h2 className="text-gray-300 font-light text-xl md:text-2xl py-2">
                 Buy the things under the affordable prices!
               </h2>
             </div>

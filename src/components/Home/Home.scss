@@ -10,6 +10,7 @@
   .e__home {
     display: flex;
     align-items: center;
+    padding: 20px 0;
 
     @media screen and (max-width: 600px) {
       flex-direction: column;
@@ -20,12 +21,14 @@
         @media screen and (max-width: 600px) {
           order: 2;
           width: 100%;
+          padding: 25px 0;
         }
       }
       &:last-child {
         width: 55%;
         @media screen and (max-width: 600px) {
           width: 100%;
+          padding: 25px 0;
         }
       }
     }
