@@ -5,6 +5,7 @@ import Navbar from "./Navbar/Navbar";
 import Home from "./Home/Home";
 import Laptops from "./Laptops/Laptops";
 import Phones from "./Phones/Phones";
+import Footer from "./Footer/Footer";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Home />
       <Laptops />
       {/* <Phones /> */}
+      <Footer />
     </div>
   );
 };

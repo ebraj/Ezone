@@ -18,8 +18,8 @@ const Laptop = () => {
       <div className="lg:container mx-auto">
         <div>
           {/* All about the title Section */}
-          <div className="title">
-            <div className="flex items-center text-gray-900 text-xl md:text-2xl">
+          <div className="title py-5 pt-8">
+            <div className="flex items-center justify-center text-gray-900 text-xl md:text-2xl">
               <span className="font-serif">01</span>
               <div className="filler"></div>
               <span>Laptops</span>
@@ -43,9 +43,7 @@ const Laptop = () => {
                       </div>
                       <div className="h-full py-2 flex flex-col justify-between items-center">
                         <div>
-                          <h2 className="font-light pb-2 px-5">
-                            {laptop.name}
-                          </h2>
+                          <h2 className="pb-2 px-5">{laptop.name}</h2>
                           {/* <div
                             className="e-own-style font-light text-gray-700 p-2"
                             dangerouslySetInnerHTML={{

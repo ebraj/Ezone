@@ -3,7 +3,7 @@ import "./Phones.scss";
 
 const Phones = () => {
   return (
-    <div className="py-8 px-6">
+    <div className="footer py-8 px-6">
       <div className="lg:container mx-auto">
         <div>
           <div className="title">
