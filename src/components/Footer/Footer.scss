@@ -1,3 +1,9 @@
 svg {
   fill: #c7c7c7;
 }
+.display-to-none {
+  //   display: none;
+  @media screen and (max-width: 615px) {
+    display: none;
+  }
+}

@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <div className="bg-black py-8 px-6">
       <div className="lg:container mx-auto text-gray-100 flex justify-between text-gray-100 flex-wrap">
-        <div>
-          <h2>Ezone</h2>
+        <div className>
+          <h2 className="display-to-none">Ezone</h2>
         </div>
         <div className="text-gray-400">
           <p>© 2021 Ezone | All rights reserved.</p>
@@ -50,7 +50,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2>Ebraj Grg.</h2>
+          <h2 className="display-to-none">Ebraj Grg.</h2>
         </div>
       </div>
     </div>
