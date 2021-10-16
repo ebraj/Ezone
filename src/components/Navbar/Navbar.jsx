@@ -7,7 +7,7 @@ const Navbar = () => {
         <div>
           <h4 className="font-bold">EZONE</h4>
         </div>
-        <ul className="flex items-center font-light text-gray-400">
+        <ul className="flex items-center text-gray-400">
           <li className="px-2 hover:text-gray-100">Laptops</li>
           <li className="px-2 hover:text-gray-100">Phones</li>
           <li className="pl-2 pr-4 hover:text-gray-100">Watches</li>

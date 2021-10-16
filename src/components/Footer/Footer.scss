@@ -1,9 +1,23 @@
 svg {
-  fill: #c7c7c7;
+  fill: #9ca3af;
 }
-.display-to-none {
-  //   display: none;
-  @media screen and (max-width: 615px) {
-    display: none;
+.e-flex-container-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+    div {
+      width: 50%;
+      padding: 20px 0;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    flex-wrap: wrap;
+    div {
+      width: 100%;
+      padding: 20px 0;
+    }
   }
 }

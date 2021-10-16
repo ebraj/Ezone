@@ -11,7 +11,6 @@ const Laptop = () => {
       .list({ category_slug: ["laptop"] })
       .then((response) => setLaptopsList(response.data));
   }, []);
-  console.log(laptopsList);
   if (laptopsList.length === 0) return false;
   return (
     <div className="py-8 px-6">
