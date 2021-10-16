@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "./Navbar/Navbar";
 import Home from "./Home/Home";
 import Laptops from "./Laptops/Laptops";
-// import Phones from "./Phones/Phones";
+import Phones from "./Phones/Phones";
 import Footer from "./Footer/Footer";
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
       <Navbar />
       <Home />
       <Laptops />
+      <Phones />
       <Footer />
     </div>
   );

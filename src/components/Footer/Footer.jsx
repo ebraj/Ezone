@@ -9,14 +9,6 @@ const Footer = () => {
           <h2>© 2021 Ezone</h2>
         </div>
         <div>
-          <h2 className="pb-2">Category</h2>
-          <ul className="text-gray-400">
-            <li>Laptops</li>
-            <li>Phones</li>
-            <li>Accessories</li>
-          </ul>
-        </div>
-        <div>
           <h2 className="pb-2">Social Handles</h2>
           <ul className="text-gray-400">
             <li className="hover:text-gray-100">
@@ -33,6 +25,14 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        <div>
+          <h2 className="pb-2">Category</h2>
+          <ul className="text-gray-400">
+            <li>Laptops</li>
+            <li>Phones</li>
+          </ul>
+        </div>
+
         <div>
           <h2>Ebraj Grg.</h2>
         </div>

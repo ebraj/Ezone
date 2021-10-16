@@ -13,7 +13,7 @@ const Laptop = () => {
   }, []);
   if (laptopsList.length === 0) return false;
   return (
-    <div className="py-8 px-6">
+    <div className="pt-8 px-6">
       <div className="lg:container mx-auto">
         <div>
           {/* All about the title Section */}
