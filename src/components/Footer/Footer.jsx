@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h2>| Ebraj Grg. |</h2>
+          <h2>| Ebraj Grg |</h2>
         </div>
       </div>
     </div>

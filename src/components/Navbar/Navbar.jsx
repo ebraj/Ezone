@@ -1,14 +1,17 @@
 import React from "react";
-import { Link } from "react-scroll";
 
-// React Scroll
+//Importing this way so the I can use both the links
+import { Link as PageLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   return (
     <div className="bg-black py-6 px-6">
       <nav className="lg:container mx-auto text-gray-100 flex items-center justify-between">
         <div>
-          <h4 className="font-bold">EZONE</h4>
+          <h4 className="font-bold">
+            <PageLink to="/">EZONE</PageLink>
+          </h4>
         </div>
         <ul className="flex items-center text-gray-400">
           <li className="px-3 hover:text-gray-100  cursor-pointer">

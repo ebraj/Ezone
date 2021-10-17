@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Link as PageLink } from "react-router-dom";
 import "./Laptops.scss";
 
 // Importing the commerce
 import { commerce } from "../../lib/commerce";
 
-const Laptop = () => {
+const Laptop = ({ getCurrentItem }) => {
   const [laptopsList, setLaptopsList] = useState([]);
+  const getTheCurrentLaptop = (e_laptop) => {
+    getCurrentItem(e_laptop);
+  };
   useEffect(() => {
     commerce.products
       .list({ category_slug: ["laptop"] })
@@ -56,7 +60,14 @@ const Laptop = () => {
                       </div>
                       <div className="py-2">
                         <button className="px-6 py-2 hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border">
-                          Choose Specs
+                          <PageLink
+                            to="/specs"
+                            onClick={() => {
+                              getTheCurrentLaptop(laptop);
+                            }}
+                          >
+                            Show Specs
+                          </PageLink>
                         </button>
                       </div>
                     </div>

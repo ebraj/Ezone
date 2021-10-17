@@ -8,7 +8,7 @@ import Zenbook from "../../images/zenbook.png";
 // Carousel
 import { Carousel } from "react-responsive-carousel";
 
-export default () => (
+const theCarousel = () => (
   <Carousel
     autoPlay={true}
     interval={2000}
@@ -30,3 +30,5 @@ export default () => (
     </div>
   </Carousel>
 );
+
+export default theCarousel;

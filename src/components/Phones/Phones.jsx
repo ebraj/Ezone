@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link as PageLink } from "react-router-dom";
 
 // Importing the commerce
 import { commerce } from "../../lib/commerce";
 
-const Phone = () => {
+const Phone = ({ getCurrentItem }) => {
   const [phonesList, setPhonesList] = useState([]);
+  const getTheCurrentPhone = (e_phone) => {
+    getCurrentItem(e_phone);
+  };
   useEffect(() => {
     commerce.products
       .list({ category_slug: ["phone"] })
@@ -31,31 +35,38 @@ const Phone = () => {
             {phonesList.length === 0 ? null : (
               <div>
                 <div className="e__grid-container text-center">
-                  {phonesList.map((laptop) => (
+                  {phonesList.map((phone) => (
                     <div
-                      key={laptop.id}
+                      key={phone.id}
                       className="flex flex-col justify-between p-4"
                     >
                       <div>
-                        <img src={laptop.image.url} alt="laptop.name" />
+                        <img src={phone.image.url} alt="phone.name" />
                       </div>
                       <div className="h-full py-2 flex flex-col justify-between items-center">
                         <div>
-                          <h2 className="pb-2 px-5">{laptop.name}</h2>
+                          <h2 className="pb-2 px-5">{phone.name}</h2>
                           {/* <div
                             className="e-own-style font-light text-gray-700 p-2"
                             dangerouslySetInnerHTML={{
-                              __html: laptop.description,
+                              __html: phone.description,
                             }}
                           ></div> */}
                         </div>
                         <h4 className="text-xl font-black">
-                          {laptop.price.formatted_with_symbol}
+                          {phone.price.formatted_with_symbol}
                         </h4>
                       </div>
                       <div className="py-2">
                         <button className="px-6 py-2 hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border">
-                          Choose Specs
+                          <PageLink
+                            to="/specs"
+                            onClick={() => {
+                              getTheCurrentPhone(phone);
+                            }}
+                          >
+                            Show Specs
+                          </PageLink>
                         </button>
                       </div>
                     </div>
