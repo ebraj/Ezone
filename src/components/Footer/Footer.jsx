@@ -26,7 +26,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2 className="pb-2">Category</h2>
+          <h2 className="pb-2">Categories</h2>
           <ul className="text-gray-400">
             <li>Laptops</li>
             <li>Phones</li>
@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h2>Ebraj Grg.</h2>
+          <h2>| Ebraj Grg. |</h2>
         </div>
       </div>
     </div>

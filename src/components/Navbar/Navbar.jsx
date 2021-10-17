@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-scroll";
+
+// React Scroll
 
 const Navbar = () => {
   return (
@@ -8,8 +11,16 @@ const Navbar = () => {
           <h4 className="font-bold">EZONE</h4>
         </div>
         <ul className="flex items-center text-gray-400">
-          <li className="px-2 hover:text-gray-100">Laptops</li>
-          <li className="px-2 hover:text-gray-100">Phones</li>
+          <li className="px-3 hover:text-gray-100  cursor-pointer">
+            <Link to="laptops-cmp" spy={true} smooth={true} duration={600}>
+              Laptops
+            </Link>
+          </li>
+          <li className="px-3 hover:text-gray-100 cursor-pointer">
+            <Link to="phones-cmp" spy={true} smooth={true} duration={900}>
+              Phones
+            </Link>
+          </li>
           <li>
             <span>
               <svg

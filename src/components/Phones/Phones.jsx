@@ -14,7 +14,7 @@ const Phone = () => {
   return (
     <div className="py-8 px-6">
       <div className="lg:container mx-auto">
-        <div>
+        <div className="phones-cmp">
           {/* All about the title Section */}
           <div className="title py-5 pt-8">
             <div className="flex items-center justify-center text-gray-900 text-xl md:text-2xl">

@@ -14,7 +14,7 @@ const Laptop = () => {
   if (laptopsList.length === 0) return false;
   return (
     <div className="pt-8 px-6">
-      <div className="lg:container mx-auto">
+      <div className="lg:container mx-auto laptops-cmp">
         <div>
           {/* All about the title Section */}
           <div className="title py-5 pt-8">
