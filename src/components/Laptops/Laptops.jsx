@@ -1,21 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Link as PageLink } from "react-router-dom";
-import "./Laptops.scss";
+import React from "react";
 
-// Importing the commerce
-import { commerce } from "../../lib/commerce";
+// Importing the Product
+import Products from "../Products/Products";
 
-const Laptop = ({ getCurrentItem }) => {
-  const [laptopsList, setLaptopsList] = useState([]);
-  const getTheCurrentLaptop = (e_laptop) => {
-    getCurrentItem(e_laptop);
-  };
-  useEffect(() => {
-    commerce.products
-      .list({ category_slug: ["laptop"] })
-      .then((response) => setLaptopsList(response.data));
-  }, []);
-  if (laptopsList.length === 0) return false;
+const Laptops = ({ getCurrentItem, laptopsList }) => {
   return (
     <div className="pt-8 px-6">
       <div className="lg:container mx-auto laptops-cmp">
@@ -30,47 +18,14 @@ const Laptop = ({ getCurrentItem }) => {
           </div>
         </div>
 
-        {/* Laptop Product Sections */}
+        {/* Laptops Product Sections */}
         <div className="laptops py-8">
           <div className="e__grid--container">
             {laptopsList.length === 0 ? null : (
               <div>
                 <div className="e__grid-container text-center">
                   {laptopsList.map((laptop) => (
-                    <div
-                      key={laptop.id}
-                      className="flex flex-col justify-between p-4"
-                    >
-                      <div>
-                        <img src={laptop.image.url} alt="laptop.name" />
-                      </div>
-                      <div className="h-full py-2 flex flex-col justify-between items-center">
-                        <div>
-                          <h2 className="pb-2 px-5">{laptop.name}</h2>
-                          {/* <div
-                            className="e-own-style font-light text-gray-700 p-2"
-                            dangerouslySetInnerHTML={{
-                              __html: laptop.description,
-                            }}
-                          ></div> */}
-                        </div>
-                        <h4 className="text-xl font-black">
-                          {laptop.price.formatted_with_symbol}
-                        </h4>
-                      </div>
-                      <div className="py-2">
-                        <button className="px-6 py-2 hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border">
-                          <PageLink
-                            to="/specs"
-                            onClick={() => {
-                              getTheCurrentLaptop(laptop);
-                            }}
-                          >
-                            Show Specs
-                          </PageLink>
-                        </button>
-                      </div>
-                    </div>
+                    <Products laptop={laptop} getCurrentItem={getCurrentItem} />
                   ))}
                 </div>
               </div>
@@ -82,4 +37,4 @@ const Laptop = ({ getCurrentItem }) => {
   );
 };
 
-export default Laptop;
+export default Laptops;

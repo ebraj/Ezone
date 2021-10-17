@@ -44,8 +44,8 @@ const SpecsCmp = ({ currentItem }) => {
                   {currentItem.price.formatted_with_symbol}
                 </h2>
               </div>
-              <div className="py-2">
-                <button className="px-8 py-2 hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border">
+              <div className="py-3">
+                <button className="px-10 py-2 hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border">
                   Add to Cart
                 </button>
               </div>
