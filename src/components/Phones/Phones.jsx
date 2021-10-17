@@ -3,7 +3,7 @@ import React from "react";
 // Importing the Product
 import Products from "../Products/Products";
 
-const Laptops = ({ getCurrentItem, phonesList }) => {
+const Laptops = ({ getCurrentItem, phonesList, addItemsToCart }) => {
   return (
     <div className="pt-4 px-6">
       <div className="lg:container mx-auto phones-cmp">
@@ -25,7 +25,12 @@ const Laptops = ({ getCurrentItem, phonesList }) => {
               <div>
                 <div className="e__grid-container text-center">
                   {phonesList.map((laptop) => (
-                    <Products laptop={laptop} getCurrentItem={getCurrentItem} />
+                    <Products
+                      key={laptop.id}
+                      laptop={laptop}
+                      getCurrentItem={getCurrentItem}
+                      addItemsToCart={addItemsToCart}
+                    />
                   ))}
                 </div>
               </div>

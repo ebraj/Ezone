@@ -21,16 +21,15 @@ const Products = ({ laptop, getCurrentItem }) => {
           </h4>
         </div>
         <div className="py-2">
-          <button className="px-6 py-2 hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border">
-            <PageLink
-              to="/specs"
-              onClick={() => {
-                getTheCurrentItem(laptop);
-              }}
-            >
-              Show Specs
-            </PageLink>
-          </button>
+          <PageLink
+            className="px-6 py-2 inline-block hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border"
+            to="/specs"
+            onClick={() => {
+              getTheCurrentItem(laptop);
+            }}
+          >
+            Show Specs
+          </PageLink>
         </div>
       </div>
     </>

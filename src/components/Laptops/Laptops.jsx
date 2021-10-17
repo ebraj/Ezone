@@ -25,7 +25,11 @@ const Laptops = ({ getCurrentItem, laptopsList }) => {
               <div>
                 <div className="e__grid-container text-center">
                   {laptopsList.map((laptop) => (
-                    <Products laptop={laptop} getCurrentItem={getCurrentItem} />
+                    <Products
+                      key={laptop.id}
+                      laptop={laptop}
+                      getCurrentItem={getCurrentItem}
+                    />
                   ))}
                 </div>
               </div>

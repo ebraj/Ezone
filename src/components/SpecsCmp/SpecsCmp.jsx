@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SpecsCmp.scss";
 
-const SpecsCmp = ({ currentItem }) => {
-  console.log(currentItem);
+const SpecsCmp = ({ currentItem, addItemsToCart }) => {
+  const [totalItem, setTotalItem] = useState(0);
   if (currentItem.length === 0) return null;
   return (
     <div className="py-5 px-6">
@@ -45,7 +45,12 @@ const SpecsCmp = ({ currentItem }) => {
                 </h2>
               </div>
               <div className="py-3">
-                <button className="px-10 py-2 hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border">
+                <button
+                  className="px-10 py-2 hover:bg-gray-900 hover:text-gray-100 border-gray-500 rounded-full border"
+                  onClick={() => {
+                    addItemsToCart(currentItem.id);
+                  }}
+                >
                   Add to Cart
                 </button>
               </div>
