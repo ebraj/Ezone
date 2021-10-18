@@ -1,0 +1,30 @@
+.e-grid-container-cart {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr repeat(3, 1fr);
+  align-items: center;
+  grid-gap: 40px;
+
+  @media screen and (max-width: 760px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  @media screen and (max-width: 520px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+
+  > div {
+    padding: 10px;
+    @media screen and (max-width: 760px) {
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 520px) {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}

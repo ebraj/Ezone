@@ -52,8 +52,7 @@ const App = () => {
   // useEffect for the obtaining the cart contents
   useEffect(() => {
     commerce.cart.contents().then((items) => setCartContents(items));
-    console.log(cartContents);
-  }, []);
+  }, [cartContents]);
 
   return (
     <Router>
