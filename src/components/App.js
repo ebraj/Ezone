@@ -18,9 +18,7 @@ const App = () => {
   const [laptopsList, setLaptopsList] = useState([]);
   const [phonesList, setPhonesList] = useState([]);
   const [retrievedData, setRetrievedData] = useState([]);
-
-  // About the Commerce Cart
-  // commerce.cart.retrieve().then((cart) => console.log(cart));
+  const [cartContents, setCartContents] = useState([]);
 
   const getCurrentItem = (curItem) => {
     setCurrentItem(curItem);
@@ -30,24 +28,32 @@ const App = () => {
    * Function to add the item to the cart....!
    */
   const addItemsToCart = (productID, quantity = 1) => {
-    commerce.cart
-      .add(productID, quantity)
-      .then((response) => console.log(response));
+    commerce.cart.add(productID, quantity);
   };
 
+  // useEffect for the laptopsList
   useEffect(() => {
     commerce.products
       .list({ category_slug: ["laptop"] })
       .then((response) => setLaptopsList(response.data));
   }, []);
+  // useEffect for the phonesList
   useEffect(() => {
     commerce.products
       .list({ category_slug: ["phone"] })
       .then((response) => setPhonesList(response.data));
   }, []);
-  useEffect(() =>
-    commerce.cart.retrieve().then((response) => setRetrievedData(response))
+  // useEffect for retrieving the products
+  useEffect(
+    () =>
+      commerce.cart.retrieve().then((response) => setRetrievedData(response)),
+    [retrievedData]
   );
+  // useEffect for the obtaining the cart contents
+  useEffect(() => {
+    commerce.cart.contents().then((items) => setCartContents(items));
+    console.log(cartContents);
+  }, []);
 
   return (
     <Router>
@@ -74,7 +80,7 @@ const App = () => {
           </Router>
           <Router path="/cart">
             <div>
-              <Cart />
+              <Cart cartContents={cartContents} />
             </div>
           </Router>
         </Switch>
