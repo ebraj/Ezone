@@ -17,6 +17,7 @@ import Phones from "./Phones/Phones";
 import Footer from "./Footer/Footer";
 import SpecsCmp from "./SpecsCmp/SpecsCmp";
 import Cart from "./Cart/Cart";
+import SuccessCmp from "./SuccessCmp/SuccessCmp";
 
 const App = () => {
   const [currentItem, setCurrentItem] = useState([]);
@@ -85,6 +86,11 @@ const App = () => {
           <Route path="/cart">
             <div className="flex-grow">
               <Cart cartContents={cartContents} retrievedData={retrievedData} />
+            </div>
+          </Route>
+          <Route path="/success">
+            <div className="flex-grow">
+              <SuccessCmp />
             </div>
           </Route>
         </Switch>
