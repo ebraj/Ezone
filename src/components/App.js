@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  // BrowserRouter as Router,
+  Switch,
+  Route,
+  HashRouter as Router,
+} from "react-router-dom";
 
 // Importing the commerce
 import { commerce } from "../lib/commerce";
@@ -69,19 +74,19 @@ const App = () => {
               <Phones getCurrentItem={getCurrentItem} phonesList={phonesList} />
             </div>
           </Route>
-          <Router path="/specs">
+          <Route path="/specs">
             <div>
               <SpecsCmp
                 currentItem={currentItem}
                 addItemsToCart={addItemsToCart}
               />
             </div>
-          </Router>
-          <Router path="/cart">
+          </Route>
+          <Route path="/cart">
             <div>
               <Cart cartContents={cartContents} />
             </div>
-          </Router>
+          </Route>
         </Switch>
         <Footer />
       </div>
