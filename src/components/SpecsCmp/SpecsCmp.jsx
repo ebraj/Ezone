@@ -9,7 +9,7 @@ const SpecsCmp = ({ currentItem, addItemsToCart }) => {
   const inputChangeHandler = (e) => {
     setTotalItem(parseInt(e.target.value));
   };
-  if (currentItem.length === 0) return null;
+  if (currentItem.length === 0) return <div></div>;
   return (
     <div className="py-5 px-6">
       <div className="lg:container mx-auto">

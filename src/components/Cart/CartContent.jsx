@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { commerce } from "../../lib/commerce";
 import "./CartContent.scss";
 
@@ -8,7 +8,6 @@ const CartContent = ({ cartItem }) => {
   const removeTheCartItem = (itemID) => {
     commerce.cart.remove(itemID);
   };
-  console.log(cartItem);
   return (
     <>
       <div className="e-grid-container-cart border my-5 p-2 font-light">

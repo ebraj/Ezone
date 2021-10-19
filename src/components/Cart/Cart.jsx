@@ -3,7 +3,7 @@ import CartContent from "./CartContent";
 import "./CartContent.scss";
 
 const Cart = ({ cartContents }) => {
-  if (cartContents.length === 0) return false;
+  if (cartContents.length === 0) return <div></div>;
   return (
     <div className="py-5 px-6">
       <div className="lg:container mx-auto">
