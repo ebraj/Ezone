@@ -75,7 +75,7 @@ const App = () => {
             </div>
           </Route>
           <Route path="/specs">
-            <div>
+            <div className="flex-grow">
               <SpecsCmp
                 currentItem={currentItem}
                 addItemsToCart={addItemsToCart}
@@ -83,8 +83,8 @@ const App = () => {
             </div>
           </Route>
           <Route path="/cart">
-            <div>
-              <Cart cartContents={cartContents} />
+            <div className="flex-grow">
+              <Cart cartContents={cartContents} retrievedData={retrievedData} />
             </div>
           </Route>
         </Switch>
