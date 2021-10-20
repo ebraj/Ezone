@@ -5,8 +5,7 @@ import "./Navbar.scss";
 import { Link as PageLink } from "react-router-dom";
 import { Link } from "react-scroll";
 
-const Navbar = ({ retrievedData }) => {
-  const { total_items } = retrievedData;
+const Navbar = ({ total_items }) => {
   return (
     <div className="bg-black py-6 px-6">
       <nav className="lg:container mx-auto text-gray-100 flex items-center justify-between">

@@ -1,13 +1,10 @@
 import React from "react";
-import { commerce } from "../../lib/commerce";
+// import { commerce } from "../../lib/commerce";
 import "./CartContent.scss";
 
 // Importing the commerceJS
 
-const CartContent = ({ cartItem }) => {
-  const removeTheCartItem = (itemID) => {
-    commerce.cart.remove(itemID);
-  };
+const CartContent = ({ cartItem, removeTheCartItem }) => {
   return (
     <>
       <div className="e-grid-container-cart border my-5 p-2 font-light">

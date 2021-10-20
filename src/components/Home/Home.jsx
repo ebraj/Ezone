@@ -16,7 +16,7 @@ const Home = () => {
                 Ezone
               </h1>
               <h2 className="text-gray-300 font-light text-xl md:text-2xl py-2">
-                Buy the things under the affordable prices!
+                Buy the stuffs under the affordable prices!
               </h2>
             </div>
             <div className="e__home--right">

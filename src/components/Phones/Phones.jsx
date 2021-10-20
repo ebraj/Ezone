@@ -5,7 +5,7 @@ import Products from "../Products/Products";
 
 const Laptops = ({ getCurrentItem, phonesList, addItemsToCart }) => {
   return (
-    <div className="pt-4 px-6">
+    <div className="pt-0 px-6">
       <div className="lg:container mx-auto phones-cmp">
         <div>
           {/* All about the title Section */}

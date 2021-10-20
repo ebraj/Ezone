@@ -25,7 +25,6 @@ const App = () => {
   const [phonesList, setPhonesList] = useState([]);
   const [retrievedData, setRetrievedData] = useState([]);
   const [cartContents, setCartContents] = useState([]);
-
   const getCurrentItem = (curItem) => {
     setCurrentItem(curItem);
   };
@@ -34,9 +33,25 @@ const App = () => {
    * Function to add the item to the cart....!
    */
   const addItemsToCart = (productID, quantity = 1) => {
-    commerce.cart.add(productID, quantity);
+    commerce.cart
+      .add(productID, quantity)
+      .then((response) => setRetrievedData(response.cart));
   };
 
+  /**
+   * Function to remove from the cart
+   */
+  const removeTheCartItem = (itemID) => {
+    commerce.cart
+      .remove(itemID)
+      .then((response) => setRetrievedData(response.cart));
+  };
+  /**
+   * Remove all the items from the cart
+   */
+  const deleteTheCart = () => {
+    commerce.cart.empty().then((response) => setRetrievedData(response.cart));
+  };
   // useEffect for the laptopsList
   useEffect(() => {
     commerce.products
@@ -53,17 +68,16 @@ const App = () => {
   useEffect(
     () =>
       commerce.cart.retrieve().then((response) => setRetrievedData(response)),
-    [retrievedData]
+    []
   );
   // useEffect for the obtaining the cart contents
   useEffect(() => {
     commerce.cart.contents().then((items) => setCartContents(items));
-  }, [cartContents]);
-
+  }, [retrievedData]);
   return (
     <Router>
       <div className="flex flex-col w-full min-h-screen justify-between">
-        <Navbar retrievedData={retrievedData} />
+        <Navbar total_items={retrievedData.total_items} />
         <Switch>
           <Route path="/" exact>
             <div>
@@ -85,12 +99,16 @@ const App = () => {
           </Route>
           <Route path="/cart">
             <div className="flex-grow">
-              <Cart cartContents={cartContents} retrievedData={retrievedData} />
+              <Cart
+                cartContents={cartContents}
+                retrievedData={retrievedData}
+                removeTheCartItem={removeTheCartItem}
+              />
             </div>
           </Route>
           <Route path="/success">
             <div className="flex-grow">
-              <SuccessCmp />
+              <SuccessCmp deleteTheCart={deleteTheCart} />
             </div>
           </Route>
         </Switch>

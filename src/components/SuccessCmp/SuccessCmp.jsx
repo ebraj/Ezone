@@ -1,12 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { commerce } from "../../lib/commerce";
+import React from "react";
 
-const SuccessCmp = () => {
-  const [isSuccessful, setIsSuccessful] = useState(false);
-  useEffect(() => {
-    commerce.cart.delete().then(() => setIsSuccessful(true));
-  }, []);
-  if (!isSuccessful) return null;
+const SuccessCmp = ({ deleteTheCart }) => {
+  deleteTheCart();
   return (
     <div>
       <div className="py-5 px-6">

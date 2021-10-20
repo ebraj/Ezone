@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import CartContent from "./CartContent";
 import "./CartContent.scss";
 
-const Cart = ({ cartContents, retrievedData }) => {
-  if (cartContents.length === 0) return null;
+const Cart = ({ cartContents, retrievedData, removeTheCartItem }) => {
+  // if (cartContents.length === 0) return null;
   return (
     <>
       <div className="py-5 px-6">
@@ -20,7 +20,10 @@ const Cart = ({ cartContents, retrievedData }) => {
           {cartContents.map((cartItem) => {
             return (
               <div key={cartItem.id}>
-                <CartContent cartItem={cartItem} />
+                <CartContent
+                  cartItem={cartItem}
+                  removeTheCartItem={removeTheCartItem}
+                />
               </div>
             );
           })}
