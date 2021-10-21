@@ -7,14 +7,12 @@ import "./CartContent.scss";
 const CartContent = ({ cartItem, removeTheCartItem }) => {
   return (
     <>
-      <div className="e-grid-container-cart border my-5 p-2 font-light">
+      <div className="e-grid-container-cart my-5 p-2 font-light">
         {/* Image */}
-        <div className="w-44 text-center">
+        <div className="w-36 text-center">
           <img src={cartItem.image.url} alt={cartItem.name} />
         </div>
-        <div>
-          <h2>{cartItem.name}</h2>
-        </div>
+        <div>{cartItem.name}</div>
         <div className="text-center">{cartItem.quantity}</div>
         <div className="text-center font-black">
           {cartItem.line_total.formatted_with_symbol}

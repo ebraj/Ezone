@@ -18,6 +18,7 @@ import Footer from "./Footer/Footer";
 import SpecsCmp from "./SpecsCmp/SpecsCmp";
 import Cart from "./Cart/Cart";
 import SuccessCmp from "./SuccessCmp/SuccessCmp";
+import PageNotFound from "./PageNotFound";
 
 const App = () => {
   const [currentItem, setCurrentItem] = useState([]);
@@ -106,9 +107,15 @@ const App = () => {
               />
             </div>
           </Route>
+
           <Route path="/success">
             <div className="flex-grow">
               <SuccessCmp deleteTheCart={deleteTheCart} />
+            </div>
+          </Route>
+          <Route>
+            <div className="flex-grow">
+              <PageNotFound />
             </div>
           </Route>
         </Switch>
