@@ -1,4 +1,15 @@
 .e_payment-container {
   width: 100%;
-  background-color: #f7f7ff;
+  background-color: #eeeeff;
+}
+.e-flex-form {
+  display: flex;
+  div {
+    &:first-child {
+      min-width: min-content;
+      max-width: 40%;
+      width: 100%;
+      margin-right: 10px;
+    }
+  }
 }

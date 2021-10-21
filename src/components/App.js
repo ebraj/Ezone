@@ -17,7 +17,6 @@ import Phones from "./Phones/Phones";
 import Footer from "./Footer/Footer";
 import SpecsCmp from "./SpecsCmp/SpecsCmp";
 import Cart from "./Cart/Cart";
-import SuccessCmp from "./SuccessCmp/SuccessCmp";
 import PageNotFound from "./PageNotFound";
 
 const App = () => {
@@ -104,13 +103,8 @@ const App = () => {
                 cartContents={cartContents}
                 retrievedData={retrievedData}
                 removeTheCartItem={removeTheCartItem}
+                deleteTheCart={deleteTheCart}
               />
-            </div>
-          </Route>
-
-          <Route path="/success">
-            <div className="flex-grow">
-              <SuccessCmp deleteTheCart={deleteTheCart} />
             </div>
           </Route>
           <Route>

@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Payment from "../Payment/Payment";
+import SuccessCmp from "../SuccessCmp/SuccessCmp";
 import CartContent from "./CartContent";
 import "./CartContent.scss";
 
-const Cart = ({ cartContents, retrievedData, removeTheCartItem }) => {
+const Cart = ({
+  cartContents,
+  retrievedData,
+  removeTheCartItem,
+  deleteTheCart,
+}) => {
+  const [isMailSent, setIsMailSent] = useState(false);
+  const checkTheMailSent = () => {
+    setIsMailSent(true);
+  };
   if (cartContents.length === 0)
     return (
       <div className="p-4 font-bold text-xl text-center">Cart is Empty.</div>
     );
+  if (isMailSent) return <SuccessCmp removeTheCartItem={removeTheCartItem} />;
   return (
     <>
       <div className="py-5 px-6">
@@ -46,7 +57,11 @@ const Cart = ({ cartContents, retrievedData, removeTheCartItem }) => {
             </div>
             {/* Left Section */}
             <div>
-              <Payment retrievedData={retrievedData} />
+              <Payment
+                retrievedData={retrievedData}
+                checkTheMailSent={checkTheMailSent}
+                deleteTheCart={deleteTheCart}
+              />
             </div>
           </div>
         </div>
